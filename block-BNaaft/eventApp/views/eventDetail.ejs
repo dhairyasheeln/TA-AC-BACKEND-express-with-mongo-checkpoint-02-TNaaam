@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width, initial-scale=version">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/70c45dc1b9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container flex">
+          <div class="logo-outer flex">
+            <img class="logo" src="/images/logo.jpeg" alt="Company Logo">
+            <a href="">Dior events</a>
+          </div>
+        <div class="links">
+          <a href="">HOME</a>
+          <a href="">Add Event</a>
+          <a href="">Event List</a>
+        </div>
+        </div>
+      </header>
+    <main class="container-1000">
+        <div class="event-detail-outer flex">
+            <div class="eventLeft">
+                <h2 class="event-title"><%= event.title %></h2>
+                <p class="event-summary"><%= event.summary %></p>
+                <span class="event-likes"><%= event.likes %></span>
+                <a href="/events/<%= event._id %>/like"><i class="fa fa-thumbs-up likeBtn"></i></a>
+                <a href="/events/<%= event._id %>/dislike"><i class="fa fa-thumbs-down dislikeBtn"></i></a><br>
+                <% event.event_category.forEach((category)=>{ %>
+                    <span class="event-tags"><%= category %></span>
+                <% }) %>
+            </div>
+            <div class="eventRight">
+                <p class="event-host"><span class="font-700">Hosted By: </span><%= event.host %></p>
+                <p class="event-location"><span class="font-700">At: </span><%= event.location %></p>
+                <p class="event-start"><span class="font-700">Starts On: </span><%= event.start_date %></p>
+                <p class="event-end"><span class="font-700">Ends On: </span><%= event.end_date %></p>
+            </div>
+        </div>
+
+        <div class="EditDelete">
+            <a class="editBtn" href="/events/<%= event._id %>/edit">Edit</a>
+            <a class="deleteBtn" href="/events/<%= event._id %>/delete">Delete</a>
+        </div>
+
+        <div class="remark-section padding">
+            <span>Remarks</span><i class="remarkIcon fa fa-comments"></i>
+            <form action="/events/<%= event._id %>/remark" method="post">
+                <input name="title" type="text" placeholder="Enter Remark">
+                <input name="author" type="text" placeholder="Name of Author">
+                <button class="remarkBtn" type="submit">Add Remark</button>
+            </form>
+        </div>
+        <div class="div">
+            <% event.remarks.forEach((rem)=>{ %>
+                <div class="remark-cover flex">
+                    <div class="remark-cover-left">
+                        <p class="remark-title"><%= rem.title %></p>
+                        <p class="remark-author">By: <%= rem.author %></p>
+                        <p class="remark-likes">Likes: <%= rem.likes%></p>
+                    </div>
+                    <div class="remark-cover-right">
+                        <div>
+                            <a href="/remarks/<%= rem._id %>/like"><i class="fa fa-thumbs-up likeBtn"></i></a>
+                            <a href="/remarks/<%= rem._id %>/dislike"><i class="fa fa-thumbs-down dislikeBtn"></i></a><br>
+                        </div>
+                        <div class="EditDelete">
+                            <a class="editBtn" href="/remarks/<%= rem._id %>/edit">Edit</a>
+                            <a class="deleteBtn" href="/remarks/<%= rem._id %>/delete">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex">
+          <div class="logo-outer flex">
+            <img class="logo" src="/images/logo.jpeg" alt="Company Logo">
+            <a href="">Dior events</a>
+          </div>
+        <div class="links">
+          <a href="">HOME</a>
+          <a href="">Add Event</a>
+          <a href="">Event List</a>
+        </div>
+        </div>
+      </header>
+    <main class="main flex-center">
+        <p class="form-heading">Please fill the Form</p>
+        <div class="form-outer">
+            <form action="/events" method="post">
+                <label>
+                    Title:<input name="title" type="text" placeholder="Enter event">
+                </label>
+                <label>
+                    Summary:<input name="summary" type="text" placeholder="Enter event description">
+                </label>
+                <label>
+                    Host:<input name="host" type="text" placeholder="Hosted By?">
+                </label>
+                <label>
+                    Start Date: <input name="start_date" type="date">
+                </label>
+                <label>
+                    End Date: <input name="end_date" type="date">
+                </label>
+                <label>
+                    Category: <input name="event_category" type="text" placeholder="eg:programming, sports, trekking">
+                </label>
+                <label>
+                    Location: <input name="location" type="text" placeholder="Location of Event">
+                </label>
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>
