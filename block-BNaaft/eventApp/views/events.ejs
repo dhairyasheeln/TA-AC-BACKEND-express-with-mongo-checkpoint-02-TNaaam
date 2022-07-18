@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width, initial-scale=version">
+    <title>event List</title>
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container flex">
+          <div class="logo-outer flex">
+            <img class="logo" src="/images/logo.jpeg" alt="Company Logo">
+            <a href="">Dior events</a>
+          </div>
+        <div class="links">
+          <a href="">HOME</a>
+          <a href="">Add Event</a>
+          <a href="">Event List</a>
+        </div>
+        </div>
+      </header>
+      
+    <main class="container padding">
+        <div class="list-outer flex-align-strech">
+          <div class="search-by">
+            <div class="categorySearch padding">
+              <p>Category</p>
+              <% events.forEach((event)=>{ %>
+                <% event.event_category.forEach((category)=>{ %>
+                    <a class="category" href="/events/sort/tags?name=<%= category %>"><%= category %></a>
+                <% }) %>
+              <% }) %>
+            </div>
+            <div class="locationSearch padding">
+              <p>Location</p>
+              <% events.forEach((event)=>{ %>
+                <a class="location" href=""><%= event.location %></a>
+              <% }) %>
+            </div>
+          </div>
+          <div class="eventList">
+            <h2 class="listHeading">
+              Event List
+            </h2>
+            
+            <% if(events.length){ %>
+              <%  events.forEach((event)=>{%>
+                <div class="event-outer flex">
+                  <p class="eventTitle"><%= event.title %></p>
+                  <a class="detailBtn" href="/events/<%= event._id %>">Details</a>
+                </div>
+              <%})%>
+
+            <% }else { %>
+              <h2>No Articles Present</h2>
+            <% } %>
+
+            
+          </div>
+
+        </div>
+    </main>
+</body>
+</html>
