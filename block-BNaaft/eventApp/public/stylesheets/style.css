@@ -1,0 +1,389 @@
+/*CSS Resets*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Colors*/
+
+:root{
+  --black:#000000;
+  --white:#ffffff;
+  --pink:#E7717D;
+  --light-grey:#C2CAD0;
+  --light-brown:#C2B9B0;
+  --dark-brown:#7E685A;
+  --light-green:#AFD275;
+  --light-blue:#d5e1f5;
+}
+
+
+
+/*Generalized*/
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-1000{
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.padding{
+  padding-top: 50px;
+}
+
+.font-700{
+  font-weight: 700;
+}
+/*Flex*/
+
+.flex{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-align-strech{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.flex-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.width-100{
+  width: 100%;
+}
+
+/*Header*/
+
+.header{
+  padding:10px 10px;
+  background-color: var(--light-green);
+}
+
+.header a{
+  color: var(--dark-brown);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.logo{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+}
+
+/*Header*/
+
+.mainRight{
+  background-image: url('../images/hero.jpg');
+  background-repeat: no-repeat;
+}
+
+.mainLeft,.mainRight{
+  flex:0 1 40%;
+  height:400px;
+}
+
+.hero-heading{
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--dark-brown);
+}
+
+.hero-text{
+  font-size: 16px;
+  text-align: justify;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.eventHeading{
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: var(--dark-brown);
+}
+
+.col-30{
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  flex:0 1 25%;
+  box-shadow: 2px 2px 20px var(--black);
+}
+
+img{
+  display:block;
+}
+
+.eventTitle{
+  font-size: 20px;
+  margin:10px 0;
+}
+
+
+/*Form*/
+
+.form-outer{
+  margin-top: 20px;
+  width:30%;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+input{
+  display: block;
+  margin: 20px 0;
+  width: 80%;
+  border:1px solid var(--black);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.form-heading{
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+/*List Page*/
+.search-by{
+  flex:0 1 25%;
+}
+
+.eventList{
+  flex:0 1 65%;
+}
+
+.listHeading{
+  margin-top: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+/*Event*/
+
+
+.event-outer{
+  border: 1px solid var(--dark-brown);
+  background-color: var(--light-brown);
+  margin-bottom: 20px;
+  padding:10px;
+}
+
+.detailBtn{
+  margin-top: 10px;
+  display: inline-block;
+  padding:10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: var(--dark-brown);
+  color: var(--white);
+  vertical-align:top;
+
+}
+
+/*Event Details*/
+
+.event-detail-outer{
+ background-color: var(--light-brown);
+}
+
+.eventLeft,.eventRight{
+  flex:0 1 45%;
+  padding: 20px;
+}
+
+.event-title{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.event-summary{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.event-likes{
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid var(--pink);
+  margin-bottom: 10px;
+}
+.event-tags{
+  display: inline-block;
+  padding: 10px;
+  background-color: #7E685A;
+}
+
+.likeBtn{
+  color: red;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.dislikeBtn{
+  margin-left: 20px;
+  color: green;
+  font-size: 20px;
+}
+
+.event-host,.event-location,.event-start,.event-end{
+  margin-bottom: 20px;
+}
+
+.editBtn,.deleteBtn{
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 4px;
+}
+
+.EditDelete{
+  margin-top: 20px;
+}
+.editBtn{
+  background-color: red;
+}
+
+.deleteBtn{
+  background-color: green;
+  margin-left: 20px;
+}
+
+/*CommentSection*/
+
+.remarkIcon{
+  
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.remarkBtn{
+  padding: 10px 15px;
+  background-color: var(--pink);
+  border: none;
+  border-radius: 4px;
+}
+
+.remark-cover{
+  margin:20px 0;
+  padding: 20px;
+  background-color: var(--light-blue);
+  border-radius: 6px;
+}
+
+.remark-title{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.remark-author{
+  margin-bottom: 10px;
+}
+
+
+/*Category*/
+
+.category{
+  margin-top: 10px;
+  display: inline-block;
+  padding:10px;
+  background-color: var(--pink);
+  color: var(--black);
+  border-radius: 4px;
+}
+
+.location{
+  margin-top: 10px;
+  display: inline-block;
+  padding:10px;
+  background-color: var(--light-grey);
+  color: var(--black);
+  border-radius: 4px;
+}
+
+.search-by{
+  padding: 20px;
+  height: 100vh;
+  background-color: var(--light-blue);
+  border-radius: 4px;
+}
+
